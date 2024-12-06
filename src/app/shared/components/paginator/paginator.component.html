@@ -1,0 +1,30 @@
+<div class="paginator" *ngIf="meta">
+    <div class="info-data">
+        <ng-container *ngIf="meta.totalPages > 0; else default">
+            Showing {{meta.currentPage}} of {{meta.totalPages}} pages
+        </ng-container>
+
+        <ng-template #default>
+            Showing {{0}} of {{meta.totalPages}} pages
+        </ng-template>
+    </div>
+    <div class="buttons">
+        <!--! estos dos botones son de prime ng -->
+        <!-- <p-button icon="pi pi-angle-double-left" (onClick)="firstPage()" [rounded]="true" [text]="true"></p-button> -->
+        <!-- <p-button icon="pi pi-angle-left" (onClick)="previousPage()" [rounded]="true" [text]="true"></p-button> -->
+        <button icon="pi pi-angle-double-left" (onClick)="firstPage()"></button>
+        <button icon="pi pi-angle-left" (onClick)="previousPage()"></button>
+        <button *ngFor="let number of generateRange(meta.totalPages)" [class.active]="number === meta.currentPage-1"
+            (click)="selectPage(number+1)">
+            {{ number+1 }}
+        </button>
+        <button icon="pi pi-angle-right" (onClick)="nextPage()"></button>
+        <button icon="pi pi-angle-double-right" (onClick)="lastPage()"></button>
+
+        <!-- ! estos dos botones son de prime ng -->
+        <!-- <p-button icon="pi pi-angle-right" (onClick)="nextPage()" [rounded]="true" [text]="true"></p-button> -->
+        <!-- <p-button icon="pi pi-angle-double-right" (onClick)="lastPage()" [rounded]="true" [text]="true"></p-button> -->
+        <app-drop-down [titleDropDown]="titleDropdow()" [optionsDropDown]="options"
+            (onChange)="selectPerPage($event)"></app-drop-down>
+    </div>
+</div>

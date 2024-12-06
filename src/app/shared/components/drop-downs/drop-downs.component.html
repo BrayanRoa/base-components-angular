@@ -1,0 +1,13 @@
+<div class="dropdown">
+    <button pRipple class="dropdown-toggle" (click)="toggleDropdown()">
+        {{titleDropDown}}
+        <span class="pi pi-chevron-down"></span>
+    </button>
+    <ul class="dropdown-menu" [class.show]="isDropdownOpen()">
+        <li *ngFor="let option of optionsDropDown">
+            <a class="dropdown-item" (click)="selectOption({ id: option.id, name: option.name })">
+                {{ option.name }}
+            </a>
+        </li>
+    </ul>
+</div>

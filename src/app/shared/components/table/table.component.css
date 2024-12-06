@@ -1,0 +1,179 @@
+/* Contenedor de la tabla */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-cards-background);
+}
+
+.table-header-wrapper {
+    background-color: var(--color-cards-background);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.search {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Estilo general de la tabla */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    color: var(--color-texto-menu);
+    box-shadow: ins;
+}
+
+/* Encabezado */
+.custom-table thead tr {
+    background-color: var(--color-text-card-one);
+    /* Color azul elegante */
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.custom-table th {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.custom-table tbody {
+    background-color: var(--color-cards-background);
+}
+
+/* Filas del cuerpo */
+.custom-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.custom-table td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Hover efecto */
+.custom-table tbody tr:hover {
+    background-color: var(--color-hover-table);
+}
+
+/* Primera columna */
+.custom-table td:first-child {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Última fila (opcional: resaltado) */
+.custom-table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+/* Estilo responsivo */
+@media (max-width: 600px) {
+
+    .custom-table th,
+    .custom-table td {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+p-button {
+    margin-right: 5px;
+}
+
+/* image by default */
+.empty-state {
+    text-align: center;
+    padding: 20px;
+}
+
+.empty-state img.empty-image {
+    max-width: 150px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.empty-state p.empty-message {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+
+/* SEARCH */
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* Centra verticalmente el contenido */
+    margin-bottom: 10px;
+    position: relative;
+    /* Necesario para posicionar el icono dentro del contenedor */
+}
+
+.input-wrapper input {
+    max-width: 250px;
+    /* Usa el ancho completo */
+    padding: 10px 40px 10px 15px;
+    /* Ajusta el padding derecho para no sobrelapar con el icono */
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: var(--color-cards-background);
+    color: var(--color-texto);
+}
+
+/* Botón "X" */
+.input-wrapper a {
+    position: absolute;
+    right: 10px;
+    /* Ubica el icono dentro del input */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Cambia el color del icono al pasar el mouse */
+.input-wrapper a:hover {
+    color: red;
+    font-size: bold;
+}
+
+/* Cambios en el borde y sombra al enfocar */
+.input-wrapper input:focus {
+    border-color: #007bff;
+    /* Azul suave */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    /* Sombra más marcada */
+}
+
+/* Placeholder estilizado */
+.input-wrapper input::placeholder {
+    color: #aaa;
+    /* Color gris claro */
+    font-style: italic;
+    /* Estilo cursivo */
+}
+
+/* Placeholder para tema oscuro */
+.input-wrapper input.dark-theme::placeholder {
+    color: #bbb;
+    /* Placeholder gris claro */
+}

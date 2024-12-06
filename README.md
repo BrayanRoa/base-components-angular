@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Diagrams to understand how the generic components function
+
+## Form Component
+this diagram shows how the generic form works in the angular application
+![alt text](image.png)
+
+## Table component
+
+this diagram shows how the generic table works in the angular application
+![alt text](image-1.png)
